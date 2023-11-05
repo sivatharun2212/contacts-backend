@@ -41,7 +41,7 @@ const registerUser = asyncHandler(async (req, res) => {
 //@access public
 const loginUser = asyncHandler(async (req, res) => {
 	const { email, password, rememberMe } = req.body;
-	const expireSession = rememberMe ? "1w" : "24h";
+	const expireSession = rememberMe ? "7d" : "24h";
 	if (!email || !password) {
 		res.status(400);
 		throw new Error("all fields are mandatory!");
